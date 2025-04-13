@@ -2,8 +2,8 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React, { useState } from "react";
-import { FaArrowDown, FaSearch, FaShoppingBasket, FaTractor, FaTruck } from "react-icons/fa";
-import { FaArrowUp, FaTruckFast } from "react-icons/fa6";
+import { FaSearch, FaShoppingBasket } from "react-icons/fa";
+import { FaTruckFast } from "react-icons/fa6";
 
 export default function Header() {
   const [showBox, setShowBox] = useState(false);
