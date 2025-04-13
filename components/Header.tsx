@@ -143,13 +143,13 @@ export default function Header() {
         <div className=" pt-[4rem] mx-auto max-w-[82rem] text-end  py-[.8rem] items-center flex justify-between px-[1.5rem]  ">
           <div>
             <motion.img
-              src="https://modinatheme.com/foodking/wp-content/uploads/2024/02/pizza-4.png" // یا هر آدرس تصویر دیگه
+              src="https://modinatheme.com/foodking/wp-content/uploads/2024/02/pizza-4.png" 
               alt="Pizza"
-              className=" w-[80%] " // اندازه دلخواه
+              className=" w-[80%] " 
               animate={{ rotate: 360 }}
               transition={{
                 repeat: Infinity,
-                duration: 20, // مدت زمان برای هر دور چرخش
+                duration: 20, 
                 ease: "linear"
               }}
             />
