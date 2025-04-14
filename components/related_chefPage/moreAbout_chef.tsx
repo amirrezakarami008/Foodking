@@ -24,7 +24,8 @@ export default function moreAboutChef({ role, chefName, imageUrl, chefLink, face
 
         <div
           className={`${onAction ? "opacity-100" : "opacity-0"}  transition-all ease-in-out duration-500 flex justify-center items-center 
-        bg-red-500 absolute 
+          bg-[url(/socialNetworkLists.png)]
+         absolute 
         w-[50px] scale-x-150 
       -right-4 top-24 h-52`}
         >
