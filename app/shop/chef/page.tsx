@@ -3,7 +3,7 @@ import { FaChevronLeft } from "react-icons/fa";
 export default function Chef() {
   return (
     <div className="w-full bg-amber-50">
-      <div className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)] w-full flex justify-center items-center h-90">
+      <div className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)] w-full flex justify-center items-center h-95">
         <div className=" space-y-5">
           <h1 className="font-semibold  text-6xl text-white"> سایر اعضا</h1>
           <div className="flex space-x-1 items-center h-8 flex-row-reverse">
@@ -17,7 +17,7 @@ export default function Chef() {
         </div>
       </div>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
-      <div className="w-full flex-wrap space-y-4 flex justify-center items-end">
+      <div className="w-full flex-wrap space-y-4 flex mt-[7rem] justify-center items-end">
         <h1 className="font-semibold w-full text-center text-xl text-green-700">درباره ما مواد غذایی</h1>
         <h1 className="font-semibold  w-full text-center text-5xl text-slate-800">دیدار با کارشناس و سرآشپزها</h1>
         <div className=" flex flex-wrap justify-center space-x-12 space-y-3 w-2/3 min-h-96 mt-12">
