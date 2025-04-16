@@ -1,6 +1,7 @@
+import Image from "next/image";
 import { FaArrowLeft, FaCalendarAlt, FaComment, FaUser } from "react-icons/fa";
 
-export default function BlogPage({title , desc , data}) {
+export default function BlogPage({title , desc , data , image}) {
   return (
     <>
     <div className='flex'>
@@ -12,7 +13,14 @@ export default function BlogPage({title , desc , data}) {
         <h1 className='text-5xl font-bold'>{title}</h1>
         <h4 className='text-[18px] my-[40px] font-bold' style={{color : 'var(--textColor)'}}>{desc}</h4>
         <a href="#" className='flex items-center font-bold hover:[color:var(--primaryColor)] transition-all'><span className='me-1 text-xl'>مشاهده بیشتر </span><span><FaArrowLeft size='20px'/></span></a>
-        <div className='bg-[url(/pages/blog/b_image/b_01.jpg)]  bg-cover w-full h-[700px] my-[40px] rounded-3xl' ></div>
+        <div className='my-[40px] relative w-full lg:h-[700px] h-[600px]' >
+        <Image
+          className="rounded-2xl cover"
+          src={image}
+          alt="تصویر غذا"
+          fill
+        />
+        </div>
     </div>
     </>
                     
