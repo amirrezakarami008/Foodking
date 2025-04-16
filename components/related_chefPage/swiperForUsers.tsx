@@ -6,6 +6,7 @@ import {
   Scrollbar,
   Thumbs,
   A11y,
+  FreeMode,
 } from "swiper/modules";
 import Image from "next/image";
 import SwiperForUsers_Images from "./swiperForUsers_Images";
@@ -39,10 +40,12 @@ export default function SwipperComponents() {
         ref={userSwipper}
         autoplay={{
           delay: 2500,
-          disableOnInteraction: false,
+          // disableOnInteraction: false,
         }}
+        loopAdditionalSlides={1}
         spaceBetween={50}
         slidesPerView={1}
+        centeredSlides
         onSlideChange={() => console.log("slide change")}
         onSwiper={(swiper) => {
           userSwipper.current = swiper;
@@ -72,21 +75,26 @@ export default function SwipperComponents() {
       </Swiper>
 
       <Swiper
-        spaceBetween={2}
+        loopAdditionalSlides={5}
+        // centeredSlides={true}
+        spaceBetween={30}
         slidesPerView={1}
-        className="  w-full "
-        modules={[Thumbs]}
+        className=" w-full"
+        modules={[Thumbs, FreeMode]}
+        loop={true}
         watchSlidesProgress
         onSwiper={setThumbsSwiper}
+
+        // slidesPerView="auto"
       >
-        <SwiperSlide>
+        <SwiperSlide className="">
           <SwiperForUsers_Images url="https://t-theme.com/foodking/wp-content/uploads/2024/02/02-1.jpg" />
         </SwiperSlide>
-        <SwiperSlide>
-          <SwiperForUsers_Images url="https://t-theme.com/foodking/wp-content/uploads/2024/02/03-1.jpg" />
-        </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className="">
           <SwiperForUsers_Images url="https://t-theme.com/foodking/wp-content/uploads/2024/02/01-1.jpg" />
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <SwiperForUsers_Images url="https://t-theme.com/foodking/wp-content/uploads/2024/02/03-1.jpg" />
         </SwiperSlide>
       </Swiper>
     </>
