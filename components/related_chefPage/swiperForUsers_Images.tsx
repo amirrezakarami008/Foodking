@@ -1,12 +1,12 @@
 import Image from "next/image";
 import { useSwiperSlide } from "swiper/react";
 export default function SwipperComponentsImages({ url }: { url: string }) {
-  var { isActive } = useSwiperSlide();
+  // var { isActive } = useSwiperSlide();
 
   return (
-    <div className="flex flex-wrap justify-center items-center cursor-pointer">
+    <div className={`flex w-full justify-center  items-center cursor-pointer`}>
       <Image
-        className={`rounded-full ${isActive && "border-2 border-amber-400"}`}
+        className={`rounded-full  border-4 border-slate-200`}
         alt="#"
         width={100}
         height={100}
