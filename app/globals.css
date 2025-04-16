@@ -25,3 +25,10 @@
     --wc-form-border-radius: 4px;
     --wc-form-border-width: 1px;
 }
+
+.swiper-slide .slide-content {
+  @apply scale-75 opacity-60 bg-red-300 transition-all duration-300;
+}
+.swiper-slide-active .slide-content {
+  @apply scale-95 bg-white shadow-xl;
+}
