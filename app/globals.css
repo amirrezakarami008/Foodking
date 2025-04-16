@@ -33,3 +33,16 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+
+
+.swiper-slide .slide-content {
+  @apply scale-75 opacity-60 bg-red-300 transition-all duration-300;
+}
+.swiper-slide-active .slide-content {
+  @apply scale-95 bg-white shadow-xl;
+}
+.shadwoCss{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+
+}
