@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { FaStar } from "react-icons/fa";
 import { useSwiperSlide } from "swiper/react";
 export default function SwipperComponentsImages({ url }: { url: string }) {
   var { isActive } = useSwiperSlide();
