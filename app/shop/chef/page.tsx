@@ -76,7 +76,7 @@ export default function Chef() {
           دیدار با کارشناس و سرآشپزها
         </h1>
         <div
-          className=" flex flex-wrap justify-center space-x-12 space-y-3 w-2/3
+          className=" flex flex-wrap justify-center gap-12  w-2/3
          min-h-96 mt-12"
         >
           <MoreAbout_chef
@@ -171,7 +171,7 @@ export default function Chef() {
       </div>
       <div className="bg-slate-150 flex w-full h-[600px]">
         <section
-          className=" w-1/4 h-full -space-y-60  flex-wrap 
+          className=" w-1/5 h-full -space-y-60  flex-wrap 
          flex justify-end items-center"
         >
           <div className="w-full mr-12 relative h-1/4">
@@ -207,10 +207,10 @@ export default function Chef() {
             </motion.div>
           </div>
         </section>
-        <section className="w-2/4 h-full flex-wrap flex justify-center items-center">
+        <section className="w-3/5 h-full flex-wrap flex justify-center items-center">
           <SwiperForUsers />
         </section>
-        <section className=" w-1/4 h-full flex justify-center items-center">
+        <section className=" w-1/5 h-full flex justify-center items-center">
           <div className="flex items-center h-full w-full">
             <motion.div
               className="w-30 ml-12 rotate-180 transition-all duration-500 "
