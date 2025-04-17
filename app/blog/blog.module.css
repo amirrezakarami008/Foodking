@@ -1,8 +1,0 @@
-.img_background{
-    background-image: url('../../public/pages/blog/blog_01.jpg');
-    background-size: cover !important;
-    background-position: center;
-    height: 300px;
-    width: 100%;
-    position: relative;
-}

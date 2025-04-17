@@ -1,5 +1,5 @@
 import styles from './blog.module.css'
-import BlogPage from '@/components/blog_page/blogPage'
+import BlogComponents from '@/components/blog_components/blog_components'
 export default function Blog(){
     const dataBlog=[
         {
@@ -44,22 +44,17 @@ export default function Blog(){
         }
     ]
     return(
-        ///bug
-
-        // dir : rtl
-        // back_color
-        //tran_button
-        //import_image
+       
         <div className='' style={{backgroundColor : 'var(--backgroundColor)'}}> 
-            <div className={styles.img_background}>
+            <div className="bg-[url('/pages/blog/blog_01.jpg')] bg-cover bg-center h-[200px]">
                 <div className='flex justify-center items-center h-full'>
                     <h2 className='text-white text-7xl font-bold'>صفحه وبلاگ</h2>
                 </div>
             </div>
-            <div className='grid grid-cols-1 lg:grid-cols-12 gap-4 mx-auto max-w-[82rem]  mt-[100px] '>
+            <div className='grid grid-cols-1 lg:grid-cols-12 gap-4 mx-auto max-w-[82rem] px-2 lg-px-0   mt-[100px] '>
             <div className='lg:col-span-8  space-y-4'>
                 {dataBlog.map((item) => (
-                    <BlogPage key={item.id} {...item} />
+                    <BlogComponents key={item.id} {...item} />
                 ))}
             </div>
                 <div className='lg:col-span-4 px-3'>
@@ -70,42 +65,42 @@ export default function Blog(){
                     <div className='border py-[35px] px-3 border-gray-200 mb-[50px]'>
                         <h3 className='text-2xl font-bold my-5'>نوشته‌های تازه</h3>
                         <ul>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">سلام دنیا!</a></li> 
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">شگفتی های غذا در رستوران فودکینگ</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">آشپزی چارنیکلز در حال کاوش در شگفتی های غذا در رستوران</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">نیش پررنگ: طعم های عجیب و غریب، ماجراجویی جهانی</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">هوس های سریع: از بین بردن لذت های فست فود</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">سلام دنیا!</a></li> 
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">شگفتی های غذا در رستوران فودکینگ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">آشپزی چارنیکلز در حال کاوش در شگفتی های غذا در رستوران</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">نیش پررنگ: طعم های عجیب و غریب، ماجراجویی جهانی</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">هوس های سریع: از بین بردن لذت های فست فود</a></li>
                         </ul>
                     </div>
                     <div className='border py-[35px] px-3 border-gray-200 my-[50px]'>
                         <h3 className='text-2xl font-bold my-5'>نوشته‌های تازه</h3>
                         <ul>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">آخرین دیدگاه‌ها</a></li> 
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span> هوس های سریع: از بین بردن لذت های فست فود</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">یک نویسنده دیدگاه وردپرس <span className='text-[var(--wc-orange)]'>در</span>  سلام دنیا!</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  هوپر برگر کینگ</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  روتی با مرغ</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  مرغ کبابی</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">آخرین دیدگاه‌ها</a></li> 
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span> هوس های سریع: از بین بردن لذت های فست فود</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">یک نویسنده دیدگاه وردپرس <span className='text-[var(--wc-orange)]'>در</span>  سلام دنیا!</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  هوپر برگر کینگ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  روتی با مرغ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">foodking <span className='text-[var(--wc-orange)]'>در</span>  مرغ کبابی</a></li>
                         </ul>
                     </div>
                     <div className='border py-[35px] px-3 border-gray-200 my-[50px]'>
                         <h3 className='text-2xl font-bold my-5'>بایگانی‌ها</h3>
-                        <span className='text-xl'>جولای 2024</span>
+                        <span className='text-[17px]'>جولای 2024</span>
                     </div>
                     <div className='border py-[35px] px-3 border-gray-200 my-[50px]'>
                         <h3 className='text-2xl font-bold my-5'>دسته‌ها</h3>
                         <ul>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">برنج کبابی</a></li> 
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">پاستا</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">پیتزا داغ</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">دسته‌بندی نشده</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">ساندویچ</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">سلامت و بهداشت</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">فرانسوی سرخ شده</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">فست فود</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">مرغ سوخاری</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">نان</a></li>
-                            <li className='my-4 text-xl hover:[color:var(--primaryColor)] transition-all'><a href="">هات داگ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">برنج کبابی</a></li> 
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">پاستا</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">پیتزا داغ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">دسته‌بندی نشده</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">ساندویچ</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">سلامت و بهداشت</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">فرانسوی سرخ شده</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">فست فود</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">مرغ سوخاری</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">نان</a></li>
+                            <li className='my-4 text-[17px] hover:[color:var(--primaryColor)] transition-all'><a href="">هات داگ</a></li>
                         </ul>
                     </div>
                 </div>
