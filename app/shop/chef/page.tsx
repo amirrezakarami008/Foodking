@@ -9,6 +9,7 @@ import {
   useAnimation,
   useScroll,
   useTransform,
+  useSpring,
 } from "framer-motion";
 import SwiperForUsers from "@/components/related_chefPage/swiperForUsers";
 import { FaChevronLeft } from "react-icons/fa";
@@ -17,6 +18,19 @@ import { useEffect, useRef } from "react";
 import { time } from "console";
 
 export default function Chef() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const strokeDashoffset = useTransform(scaleX, (v) => 164 - 164 * v);
+
   const scope = useRef<any>(null);
   const pitzza = useRef<any>(null);
   const hamburger = useRef<any>(null);
@@ -50,7 +64,33 @@ export default function Chef() {
     [60, 180, 270]
   );
   return (
-    <div className="w-full bg-amber-50">
+    <div ref={ref} className="w-full bg-amber-50">
+      <motion.svg
+        className="fixed bottom-4 left-4"
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+      >
+        <circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#fff"
+          strokeWidth="4"
+          fill="none"
+        />
+        <motion.circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#cd0808"
+          strokeWidth="4"
+          fill="none"
+          strokeDasharray="164"
+          strokeDashoffset="164"
+          style={{ strokeDashoffset }}
+        />
+      </motion.svg>
       <div className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)] w-full flex justify-center items-center h-95">
         <div className=" space-y-5">
           <h1 className="font-semibold  text-6xl text-white"> سایر اعضا</h1>
