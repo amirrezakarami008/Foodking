@@ -4,7 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
   images: {
 
-    domains: ['t-theme.com']
 
     domains: ['t-theme.com', 'modinatheme.com'],
 

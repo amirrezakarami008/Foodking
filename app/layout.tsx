@@ -2,13 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
- import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,7 +34,7 @@ export default function RootLayout({
         <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@500..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        {/* <Header /> */}
+        <Header />
         {children}
         <Footer />
       </body>
