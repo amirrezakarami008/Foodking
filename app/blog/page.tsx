@@ -45,7 +45,7 @@ export default function Blog(){
     ]
     return(
        
-        <div className='' style={{backgroundColor : 'var(--backgroundColor)'}}> 
+        <div dir='rtl' className='' style={{backgroundColor : 'var(--backgroundColor)'}}> 
             <div className="bg-[url('/pages/blog/blog_01.jpg')] bg-cover bg-center h-[200px]">
                 <div className='flex justify-center items-center h-full'>
                     <h2 className='text-white text-7xl font-bold'>صفحه وبلاگ</h2>
