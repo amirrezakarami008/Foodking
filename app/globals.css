@@ -46,7 +46,25 @@
 .shadwoCss2{
     box-shadow:  0 -2px 4px rgba(0, 0, 0, 0.4), 0 -4px 10px rgba(0, 0, 0, 0.2);
 
+
+
 }
+:root {
+  --font-header: "Quicksand", "Nunito", sans-serif;
+  --font-body: "Rubik", "Open Sans", "Roboto", sans-serif;
+
+  --primary-bg: #ffffff;
+  --primary-text: #1c1c1c;
+
+  --primary-bg-dark: #1c1c1c;
+  --primary-text-dark: #ffffff;
+}
+
+
+* {
+  font-family: var(--font-body) !important;
+}
+
 :root {
   --font-header: "Quicksand", "Nunito", sans-serif;
   --font-body: "Rubik", "Open Sans", "Roboto", sans-serif;
@@ -61,6 +79,7 @@
 * {
   font-family: var(--font-body) !important;
 }
+
 
 h1,
 h2,
