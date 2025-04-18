@@ -27,30 +27,7 @@
     --wc-form-border-width: 1px;
 }
 
-  --primaryColor: #00813d;
-  --secondaryColor: #d12525;
-  --mainColor: #ffb936;
-  --textColor: #5c5c5b;
-  --whiteColor: #ffffff;
-  --blackColor: #212121;
-  --backgroundColor: #f4f1ea;
-  --woocommerce: #720eec;
-  --wc-green: #7ad03a;
-  --wc-red: #a00;
-  --wc-orange: #ffba00;
-  --wc-blue: #2ea2cc;
-  --wc-primary: #720eec;
-  --wc-primary-text: #fcfbfe;
-  --wc-secondary: #e9e6ed;
-  --wc-secondary-text: #515151;
-  --wc-highlight: #958e09;
-  --wc-highligh-text: white;
-  --wc-content-bg: #fff;
-  --wc-subtext: rgba(92, 92, 91, 0.1);
-  --wc-form-border-color: #200707cc;
-  --wc-form-border-radius: 4px;
-  --wc-form-border-width: 1px;
-}
+ 
 .shadwoCss {
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 }
