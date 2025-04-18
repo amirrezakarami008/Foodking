@@ -4,22 +4,60 @@ import MoreAbout_chef from "@/components/related_chefPage/moreAbout_chef";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaChevronLeft } from "react-icons/fa";
 import MoreAbout_testimonial from "@/components/related_testimonial/moreAbout_testimonial";
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import { useRef } from "react";
 export default function Testimonial() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+
   const motorCycleRef = useRef(null);
   const motorCycle = useScroll({
     target: motorCycleRef,
     offset: ["start end", "end start"],
   });
-
+  const strokeDashoffset = useTransform(scaleX, (v) => 164 - 164 * v);
   const forMotorCycle = useTransform(
     motorCycle.scrollYProgress,
     [0, 0.5, 0.7, 1],
     [0, 150, 550, 1300]
   );
   return (
-    <div className="w-full bg-amber-50">
+    <div ref={ref} className="w-full bg-amber-50">
+      <motion.svg
+        className="fixed bottom-4 left-4"
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+      >
+        <circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#fff"
+          strokeWidth="4"
+          fill="none"
+        />
+        <motion.circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#cd0808"
+          strokeWidth="4"
+          fill="none"
+          strokeDasharray="164"
+          strokeDashoffset="164"
+          style={{ strokeDashoffset }}
+        />
+      </motion.svg>
       <div className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)] w-full flex justify-center items-center h-95">
         <div className=" space-y-5">
           <h1 className="font-semibold  text-6xl text-white"> گواهینامه</h1>
@@ -101,10 +139,26 @@ export default function Testimonial() {
       </div>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div
-        className="w-full flex flex-wrap justify-center bg-[#e7ed70] mt-24 bg-no-repeat bg-cover bg-center h-96
+        className="w-full flex flex-wrap justify-end bg-[#e7ed70] mt-24 bg-no-repeat 
+        bg-cover bg-center h-96
        bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image.jpg)]"
       >
-        <section className="w-1/5 flex justify-center items-center  ">
+        <section className="w-[188px]  flex justify-start items-center  h-full">
+          <motion.div
+            // initial={{ y: 1 }}
+            animate={{ translateY: [0, -200, 0] }}
+            transition={{
+              duration: 1.4,
+              ease: "easeOut",
+
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="w-24 h-20 transition-all  duration-700
+           bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/chilli.png)]"
+          ></motion.div>
+        </section>
+        <section className="w-1/5 flex justify-center items-center ">
           <button
             className=" w-64 h-16 group relative
            font-semibold rounded-xl bg-slate-100"
@@ -132,7 +186,7 @@ export default function Testimonial() {
           className=" transition-all duration-700 -translate-y-5 w-1/4 h-[350px]
          bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]"
         ></motion.div>
-        <section className="w-1/3 h-full flex justify-center items-center">
+        <section className="w-1/3 h-full  flex justify-center items-center">
           <div className="w-full h-1/2">
             <h1 className="text-amber-300 text-xl text-right w-full font-semibold ">
               ترد، هر لقمه طعم
@@ -149,6 +203,21 @@ export default function Testimonial() {
               </h1>
             </div>
           </div>
+        </section>
+        <section className="w-56 flex justify-end items-center  h-full">
+          <motion.div
+            // initial={{ y: 1 }}
+            animate={{ translateY: [100, -200, 200] }}
+            transition={{
+              duration: 1,
+              ease: "easeOut",
+
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="w-24 h-1/2 transition-all duration-700
+           bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image-11.png)]"
+          ></motion.div>
         </section>
       </div>
     </div>
