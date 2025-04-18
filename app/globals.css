@@ -20,7 +20,7 @@
   --wc-highlight: #958e09;
   --wc-highligh-text: white;
   --wc-content-bg: #fff;
-  --wc-subtext: #767676;
+  --wc-subtext: rgba(92, 92, 91, 0.1);
   --wc-form-border-color: #200707cc;
   --wc-form-border-radius: 4px;
   --wc-form-border-width: 1px;
