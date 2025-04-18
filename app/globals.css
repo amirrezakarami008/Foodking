@@ -36,6 +36,7 @@
 
 
 
+
 .swiper-slide .slide-content {
   @apply scale-75 opacity-60 bg-red-300 transition-all duration-300;
 }
@@ -69,3 +70,4 @@ h5,
 h6 {
   font-family: var(--font-header);
 }
+
