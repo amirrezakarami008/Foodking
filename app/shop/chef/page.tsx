@@ -9,14 +9,28 @@ import {
   useAnimation,
   useScroll,
   useTransform,
+  useSpring,
 } from "framer-motion";
-
+import SwiperForUsers from "@/components/related_chefPage/swiperForUsers";
 import { FaChevronLeft } from "react-icons/fa";
 import FeatureOfUs from "@/components/related_chefPage/FeatureOfUs";
 import { useEffect, useRef } from "react";
 import { time } from "console";
 
 export default function Chef() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end end"],
+  });
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001,
+  });
+  const strokeDashoffset = useTransform(scaleX, (v) => 164 - 164 * v);
+
   const scope = useRef<any>(null);
   const pitzza = useRef<any>(null);
   const hamburger = useRef<any>(null);
@@ -50,10 +64,49 @@ export default function Chef() {
     [60, 180, 270]
   );
   return (
-    <div className="w-full bg-amber-50">
-      <div className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)] w-full flex justify-center items-center h-95">
+    <div ref={ref} className="w-full bg-amber-50">
+      <motion.svg
+        className="fixed bottom-4 left-4"
+        width="60"
+        height="60"
+        viewBox="0 0 60 60"
+      >
+        <circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#fff"
+          strokeWidth="4"
+          fill="none"
+        />
+        <motion.circle
+          cx="30"
+          cy="30"
+          r="26"
+          stroke="#cd0808"
+          strokeWidth="4"
+          fill="none"
+          strokeDasharray="164"
+          strokeDashoffset="164"
+          style={{ strokeDashoffset }}
+        />
+      </motion.svg>
+      <div
+        className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)]
+      bg-cover bg-center  w-full flex justify-center items-center h-95"
+      >
         <div className=" space-y-5">
-          <h1 className="font-semibold  text-6xl text-white"> سایر اعضا</h1>
+          <h1
+            className="w-full font-semibold  text-center text-2xl text-white
+            sm:text-3xl 
+            md:text-4xl 
+            lg:text-6xl lg:text-white 
+
+           "
+          >
+            {" "}
+            سایر اعضا
+          </h1>
           <div className="flex space-x-1 items-center h-8 flex-row-reverse">
             <h1 className="font-semibold  text-xl text-green-500">
               {" "}
@@ -69,13 +122,27 @@ export default function Chef() {
       </div>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div className="w-full flex-wrap space-y-4 flex mt-[7rem] justify-center items-end">
-        <h1 className="font-semibold w-full text-center text-xl text-green-700">
+        <h1
+          className="font-semibold w-full text-center 
+        text-xl text-green-700
+        
+        "
+        >
           درباره ما مواد غذایی
         </h1>
-        <h1 className="font-semibold  w-full text-center text-5xl text-slate-800">
+        <h1
+          className="font-semibold text-2xl w-full text-center 
+         text-slate-800
+         md:text-4xl
+        lg:text-5xl
+        "
+        >
           دیدار با کارشناس و سرآشپزها
         </h1>
-        <div className=" flex flex-wrap justify-center space-x-12 space-y-3 w-2/3 min-h-96 mt-12">
+        <div
+          className=" flex flex-wrap justify-center gap-12  w-2/3
+         min-h-96 mt-12"
+        >
           <MoreAbout_chef
             role="اجاق گاز ارشد"
             chefLink="#"
@@ -140,8 +207,19 @@ export default function Chef() {
       </div>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div
-        className="bg-[url(https://modinatheme.com/foodking/wp-content/
-      uploads/2024/03/bg-shape.png)] bg-green-700 space-x-6 flex justify-center items-center w-full h-[400px]"
+        className="
+        bg-[url(https://modinatheme.com/foodking/wp-content/uploads/2024/03/bg-shape.png)]
+       bg-cover bg-center bg-green-700 
+       space-x-6 flex justify-center items-center flex-wrap w-full 
+       h-[1200px]
+        md:h-[700px]
+        lg:h-[700px]
+
+       xl:h-[700px]
+       2xl:h-[400px]
+
+
+       "
       >
         <FeatureOfUs
           title="غذای 100% طبیعی"
@@ -166,21 +244,14 @@ export default function Chef() {
           imageUrl="https://modinatheme.com/foodking/wp-content/uploads/2024/03/01.svg"
         />
       </div>
-      <div className="bg-slate-100 flex w-full h-[600px]">
+      <div className="bg-slate-150 flex w-full h-[600px]">
         <section
-          className=" w-1/4 h-full -space-y-60  flex-wrap 
+          className=" w-1/5 h-full -space-y-60  flex-wrap 
          flex justify-end items-center"
         >
-          <div className="w-full  relative h-1/4">
+          <div className="w-full mr-12 relative h-1/4">
             <motion.div
               style={{ y }}
-              // transition={{
-              //   duration: 0.5,
-              //   ease: "easeInOut",
-              //   time: [0, 0.5, 1],
-              // }}
-              // whileInView={{ translateY: -90 }}
-              // viewport={{ amount: 0.7, margin: "-90px" }}
               ref={scope}
               className="w-auto  transition-all duration-500  absolute right-0"
             >
@@ -194,12 +265,8 @@ export default function Chef() {
               />
             </motion.div>
           </div>
-          <div className="w-full relative h-1/4">
+          <div className="w-full mr-12 relative h-1/4">
             <motion.div
-              // initial={{ rotate: 1 }}
-              // transition={{ duration: 0.3 }}
-              // whileInView={{ rotate: 180 }}
-              // viewport={{ amount: 0.8 }}
               style={{ rotate: rotPitzza }}
               ref={pitzza}
               className="w-auto absolute transition-all duration-500  rotate-180 right-0"
@@ -215,11 +282,13 @@ export default function Chef() {
             </motion.div>
           </div>
         </section>
-        <section className="w-2/4"></section>
-        <section className=" w-1/4 h-full flex justify-center items-center">
+        <section className="w-3/5 h-full flex-wrap flex justify-center items-center">
+          <SwiperForUsers />
+        </section>
+        <section className=" w-1/5 h-full flex justify-center items-center">
           <div className="flex items-center h-full w-full">
             <motion.div
-              className="w-30  rotate-180 transition-all duration-500 "
+              className="w-30 ml-12 rotate-180 transition-all duration-500 "
               ref={hamburger}
               style={{ rotate: rotateHamburgur }}
             >
