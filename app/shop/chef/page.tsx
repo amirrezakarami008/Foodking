@@ -4,9 +4,11 @@ import MoreAbout_chef from "@/components/related_chefPage/moreAbout_chef";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import SwiperForUsers from "@/components/related_chefPage/swiperForUsers";
-import { FaChevronLeft } from "react-icons/fa";
 import FeatureOfUs from "@/components/related_chefPage/FeatureOfUs";
 import { useRef } from "react";
+import { FaChevronLeft } from "react-icons/fa";
+import Link from "next/link";
+import TitelPages from "@/components/titelCompo/TitelPges";
 
 export default function Chef() {
   const ref = useRef(null);
@@ -42,38 +44,41 @@ export default function Chef() {
     offset: ["start end", "end start"]
   });
   const rotateHamburgur = useTransform(forhumbarger.scrollYProgress, [0, 0.2, 0.4], [60, 180, 270]);
+
   return (
     <div ref={ref} className="w-full bg-amber-50">
       <motion.svg className="fixed bottom-4 left-4" width="60" height="60" viewBox="0 0 60 60">
         <circle cx="30" cy="30" r="26" stroke="#fff" strokeWidth="4" fill="none" />
         <motion.circle cx="30" cy="30" r="26" stroke="#cd0808" strokeWidth="4" fill="none" strokeDasharray="164" strokeDashoffset="164" style={{ strokeDashoffset }} />
       </motion.svg>
-      <div
-        className="bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/07/breadcrumb-1.jpg)]
-      bg-cover bg-center  w-full flex justify-center items-center h-95"
-      >
+      <TitelPages>
         <div className=" space-y-5">
           <h1
             className="w-full font-semibold  text-center text-2xl text-white
-            sm:text-3xl 
-            md:text-4xl 
-            lg:text-6xl lg:text-white 
-
-           "
+              sm:text-3xl 
+              md:text-4xl 
+              lg:text-6xl lg:text-white 
+  
+             "
           >
             {" "}
             سایر اعضا
           </h1>
           <div className="flex space-x-1 items-center h-8 flex-row-reverse">
-            <h1 className="font-semibold  text-xl text-green-500"> صفحه اصلی</h1>
+            <Link href={"/"}>
+              {" "}
+              <h1 className="font-semibold  text-xl text-green-500"> صفحه اصلی</h1>
+            </Link>
             <FaChevronLeft className=" mt-2 text-base text-green-500" />
-            <h1 className="font-semibold  text-xl text-green-500"> فروشگاه</h1>
+            <Link href={"/shop"}>
+              <h1 className="font-semibold  text-xl text-green-500"> فروشگاه</h1>
+            </Link>
             <FaChevronLeft className="mt-2 font-semibold  text-base text-green-500" />
 
             <h1 className="font-semibold  text-xl text-slate-100"> آشپز</h1>
           </div>
         </div>
-      </div>
+      </TitelPages>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div className="w-full flex-wrap space-y-4 flex mt-[7rem] justify-center items-end">
         <h1
