@@ -25,12 +25,21 @@ export default function SwipperComponents() {
   return (
     <>
       <Swiper
-        className=" h-[200px] w-full "
+        className="
+h-[300px]
+        sm:h-[240px]
+
+        md:h-[240px]
+
+        lg:h-[240px]
+        xl:h-[200px]
+        2xl:h-[200px]
+          w-full "
         style={
           {
             //   "--swiper-navigation-color": "#880808",
             "--swiper-pagination-color": "#880808",
-            "--swiper-pagination-bottom": "2px",
+            "--swiper-pagination-bottom": "-5px",
           } as any
         }
         thumbs={{ swiper: thumbsSwiper }}
