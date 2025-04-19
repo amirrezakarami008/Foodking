@@ -4,6 +4,11 @@ import MoreAbout_chef from "@/components/related_chefPage/moreAbout_chef";
 import { TbTruckDelivery } from "react-icons/tb";
 import { FaChevronLeft } from "react-icons/fa";
 import MoreAbout_testimonial from "@/components/related_testimonial/moreAbout_testimonial";
+
+import { useScroll, useTransform, motion } from "framer-motion";
+import { useRef } from "react";
+export default function Testimonial() {
+
 import { useScroll, useTransform, motion, useSpring } from "framer-motion";
 import { useRef } from "react";
 export default function Testimonial() {
@@ -19,12 +24,15 @@ export default function Testimonial() {
     restDelta: 0.001,
   });
 
+
   const motorCycleRef = useRef(null);
   const motorCycle = useScroll({
     target: motorCycleRef,
     offset: ["start end", "end start"],
   });
+
   const strokeDashoffset = useTransform(scaleX, (v) => 164 - 164 * v);
+
   const forMotorCycle = useTransform(
     motorCycle.scrollYProgress,
     [0, 0.5, 0.7, 1],
@@ -151,6 +159,7 @@ export default function Testimonial() {
       </div>
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div
+
         className="
         justify-center
 
@@ -168,6 +177,15 @@ md:justify-center
         w-full flex 
 
           bg-[#e7ed70] mt-24 
+
+
+        className="w-full flex flex-wrap justify-center bg-[#e7ed70] mt-24 bg-no-repeat bg-cover bg-center h-96
+       bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image.jpg)]"
+      >
+        <section className="w-1/5 flex justify-center items-center  ">
+
+        className="w-full flex flex-wrap justify-end bg-[#e7ed70] mt-24 bg-no-repeat 
+
         bg-cover bg-center h-96
        bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image.jpg)]"
       >
@@ -194,6 +212,7 @@ md:justify-center
            bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/chilli.png)]"
           ></motion.div>
         </section>
+
         <section
           className="
          
@@ -217,6 +236,10 @@ md:justify-center
         flex 
         items-center "
         >
+
+        <section className="w-1/5 flex justify-center items-center ">
+
+
           <button
             className="
             w-48
@@ -264,6 +287,7 @@ md:justify-center
             ></span>
           </button>
         </section>
+
 
         <section
           className="
@@ -358,6 +382,22 @@ xl:-translate-x-36
               className="text-amber-300
             text-xl text-right w-full font-semibold "
             >
+
+        <motion.div
+          ref={motorCycleRef}
+          transition={{ duration: 14 }}
+          style={{ translateX: forMotorCycle as any }}
+          className=" transition-all duration-700 -translate-y-5 w-1/4 h-[350px]
+         bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]"
+        ></motion.div>
+
+        <section className="w-1/3 h-full flex justify-center items-center">
+
+        <section className="w-1/3 h-full  flex justify-center items-center">
+
+          <div className="w-full h-1/2">
+            <h1 className="text-amber-300 text-xl text-right w-full font-semibold ">
+
               ترد، هر لقمه طعم
             </h1>
             <h1
@@ -407,6 +447,12 @@ xl:-translate-x-36
               </h1>
             </div>
           </div>
+
+        </section>
+
+
+        <section className="w-56 flex justify-end items-center  h-full">
+
           <motion.div
             // initial={{ y: 1 }}
             animate={{ y: [-33, 3, -33] }}
@@ -434,6 +480,7 @@ w-24
            bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image-11.png)]"
           ></motion.div>
         </section>
+
       </div>
     </div>
   );
