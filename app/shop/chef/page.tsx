@@ -24,9 +24,9 @@ export default function Chef() {
   });
   const strokeDashoffset = useTransform(scaleX, (v) => 164 - 164 * v);
 
-  const scope = useRef<any>(null);
-  const pitzza = useRef<any>(null);
-  const hamburger = useRef<any>(null);
+  const scope = useRef<HTMLDivElement>(null);
+  const pitzza = useRef<HTMLDivElement>(null);
+  const hamburger = useRef<HTMLDivElement>(null);
 
   const forVerticalDir = useScroll({
     target: scope,
