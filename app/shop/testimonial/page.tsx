@@ -28,10 +28,10 @@ export default function Testimonial() {
   const forMotorCycle = useTransform(
     motorCycle.scrollYProgress,
     [0, 0.5, 0.7, 1],
-    [0, 150, 550, 1300]
+    [230, 55, 15, 0]
   );
   return (
-    <div ref={ref} className="w-full bg-amber-50">
+    <div ref={ref} className="w-full ">
       <motion.svg
         className="fixed bottom-4 left-4"
         width="60"
@@ -152,19 +152,20 @@ export default function Testimonial() {
       {/* //! دیدار با کارشناس ها و سرآشپزها */}
       <div
         className="
-        justify-end
+        justify-center
 
-md:justify-end
 
-        lg:justify-end
+md:justify-center
+
+        lg:justify-center
         
-        xl:justify-end
-        2xl:justify-end
+        xl:justify-center
+        2xl:justify-center
       
 
 
 
-        w-full flex flex-wrap
+        w-full flex 
 
           bg-[#e7ed70] mt-24 
         bg-cover bg-center h-96
@@ -173,21 +174,23 @@ md:justify-end
         <section
           className="
          
-          w-16
+          w-24
        
-         flex justify-start items-center  h-full"
+        relative  h-full"
         >
           <motion.div
             // initial={{ y: 1 }}
-            animate={{ translateY: [0, -200, 0] }}
+
+            animate={{ y: [-33, 3, -33] }}
             transition={{
-              duration: 1.4,
-              ease: "easeOut",
+              duration: 3,
+              ease: "easeInOut",
 
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="w-24   h-20 transition-all  duration-700
+            className="w-24  
+            absolute right-0 top-40 h-20 transition-all 
            bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/chilli.png)]"
           ></motion.div>
         </section>
@@ -195,18 +198,20 @@ md:justify-end
           className="
          
           justify-start
-          w-auto
+          w-3/5
+         
+
         md:justify-center 
-        md:w-1/5 
+        md:w-3/5 
 
         lg:justify-center
         lg:w-1/5 
 
         xl:justify-center
-        xl:w-1/5 
+        xl:w-1/4 
 
         2xl:justify-center 
-        2xl:w-1/5 
+        2xl:w-1/4
 
 
         flex 
@@ -253,28 +258,51 @@ md:justify-end
               />
             </div>
             <span
-              className="absolute inset-0 w-full h-full  rounded-xl bg-amber-400 
+              className="absolute inset-0 w-full h-full  rounded-xl 
                scale-0 group-hover:scale-100
              transition-all duration-500 ease-out origin-center"
             ></span>
           </button>
         </section>
-        <motion.div
-          ref={motorCycleRef}
-          transition={{ duration: 14 }}
-          style={{ translateX: forMotorCycle as any }}
-          className="
-          hidden
-          bg-cover bg-center
 
+        <section
+          className="
+       sm:w-0
+
+       md:w-0
+          
+       lg:w-[552px]
+
+       xl:w-[552px]
+
+       2xl:w-[622px]
+        relative"
+        >
+          <motion.div
+            ref={motorCycleRef}
+            transition={{ duration: 14 }}
+            style={{ translateX: forMotorCycle as any }}
+            className="
+            absolute 
+            inset-0
+
+          hidden
+         
 bg-none
+
 md:hidden
+md:scale-80
+
 
              lg:block
-
              xl:block
-
              2xl:block
+lg:scale-95
+
+xl:scale-100
+
+2xl:scale-100
+
           md:bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]
 md:-translate-x-36
           lg:bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]
@@ -287,30 +315,45 @@ xl:-translate-x-36
 2xl:-translate-x-36
 
 
-          w-1/4 h-[350px]
+          w-[400px] h-[350px]
           transition-all duration-700 -translate-y-5 
          "
-        ></motion.div>
+          ></motion.div>
+        </section>
         <section
           className="
     w-[220px]
-         justify-end
+        
          sm:w-[350px]
-     md:ml-6
+    
             md:w-[370px]
 
-             lg:ml-6
+             
              lg:w-[450px]
 
 
-             xl:ml-24
-             xl:w-[470px]
+             
+             xl:w-[550px]
+            
 
-             2xl:ml-24
+             2xl:w-[500px]
+       
+          
          
-         h-full  flex  items-center"
+         h-full relative"
         >
-          <div className="w-full h-1/2">
+          <div
+            className="w-[400px] z-10 
+            -left-64
+          md:-left-36
+
+          lg:-left-20
+            
+          xl:-left-20
+          
+          2xl:-left-20
+           top-36 absolute  h-1/2"
+          >
             <h1
               className="text-amber-300
             text-xl text-right w-full font-semibold "
@@ -366,28 +409,28 @@ xl:-translate-x-36
           </div>
           <motion.div
             // initial={{ y: 1 }}
-            animate={{ translateY: [100, -200, 200] }}
+            animate={{ y: [-33, 3, -33] }}
             transition={{
-              duration: 1,
-              ease: "easeOut",
+              duration: 3,
+              ease: "easeInOut",
 
               repeat: Infinity,
               repeatType: "loop",
             }}
-            className="
-           
-            
+            className="  
+            top-36
+            absolute
+            z-0
+            right-0
+            xl:right-0
+            2xl:-right-[104px]
 w-24
-
             md:w-24
-
              lg:w-24
-
              xl:w-24
-
              2xl:w-24
-            
-            h-1/2 transition-all duration-700
+            h-1/2 transition-all 
+         
            bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/image-11.png)]"
           ></motion.div>
         </section>
