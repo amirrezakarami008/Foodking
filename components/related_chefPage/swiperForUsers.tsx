@@ -31,10 +31,11 @@ h-[300px]
             //   "--swiper-navigation-color": "#880808",
             "--swiper-pagination-color": "#880808",
 
+            "--swiper-pagination-bottom": "2px",
+
             "--swiper-pagination-bottom": "-5px",
 
             "--swiper-pagination-bottom": "2px"
-
           } as any
         }
         thumbs={{ swiper: thumbsSwiper }}
