@@ -2,14 +2,22 @@
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Autoplay } from "swiper/modules"; // ← اینو اضافه کن
 import "swiper/css";
+import TitelPages from "@/components/titelCompo/TitelPges";
+import { FaChevronLeft } from "react-icons/fa";
 export default function Menu1() {
   return (
     <div dir="rtl">
-      <div className="bg-[url('/pages/blog/blog_01.jpg')] bg-cover bg-center h-[200px]">
-        <div className="flex justify-center items-center h-full">
-          <h2 className="text-white text-6xl font-bold">منو غذا ۰۱</h2>
+      <TitelPages>
+        <div className="text-center space-y-4 text-white">
+          <h1 className="text-4xl md:text-6xl font-bold"> منو غذا </h1>
+          <div className="flex items-center justify-center flex-row-reverse gap-2 text-xl">
+            <span className="text-white font-semibold">صفحه اصلی</span>
+            <FaChevronLeft className="mt-1 text-green-500" />
+            <span className=" text-green-500 font-semibold  "> منو غذا </span>
+          </div>
         </div>
-      </div>
+      </TitelPages>
+
       <div className="my-[140px] w-full">
         <h5 className="text-center text-[var(--primaryColor)] my-2 font-bold">درباره غذای ما</h5>
         <h2 className="text-center  text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold">منوی غذای پرطرفدار</h2>
@@ -138,7 +146,7 @@ export default function Menu1() {
               <SwiperSlide className="bg-[var(--wc-secondary)] p-6 text-center flex flex-col items-center justify-center gap-4 pt-[100px]">
                 <h3 className="text-4xl font-bold text-black my-5">امیلیا امیلی</h3>
                 <p className="text-red-600 text-2xl my-3 font-medium">مدیر عامل و موسس کسب و کار</p>
-                <p className="text-black text-xl leading-7  font-bold my-5">"ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :</p>
+                <p className="text-black text-xl leading-7  font-bold my-5">ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :</p>
 
                 {/* ستاره‌ها */}
                 <div className="flex justify-center text-yellow-500 text-3xl">{"★★★★★"}</div>
@@ -151,7 +159,7 @@ export default function Menu1() {
               <SwiperSlide className="bg-[var(--wc-secondary)] p-6 text-center flex flex-col items-center justify-center gap-4 pt-[100px]">
                 <h3 className="text-4xl font-bold text-black my-5">امیلیا امیلی</h3>
                 <p className="text-red-600 text-2xl my-3 font-medium">مدیر عامل و موسس کسب و کار</p>
-                <p className="text-black text-xl leading-7  font-bold my-5">"ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :</p>
+                <p className="text-black text-xl leading-7  font-bold my-5">ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :</p>
 
                 {/* ستاره‌ها */}
                 <div className="flex justify-center text-yellow-500 text-3xl">{"★★★★★"}</div>
@@ -164,7 +172,7 @@ export default function Menu1() {
               <SwiperSlide className="bg-[var(--wc-secondary)] p-6 text-center flex flex-col items-center justify-center gap-4 pt-[100px]">
                 <h3 className="text-4xl font-bold text-black my-5">امیلیا امیلی</h3>
                 <p className="text-red-600 text-2xl my-3 font-medium">مدیر عامل و موسس کسب و کار</p>
-                <p className="text-black text-xl leading-7  font-bold my-5">"ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :)"</p>
+                <p className="text-black text-xl leading-7  font-bold my-5">ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :)</p>
 
                 {/* ستاره‌ها */}
                 <div className="flex justify-center text-yellow-500 text-3xl">{"★★★★★"}</div>
@@ -177,7 +185,7 @@ export default function Menu1() {
               <SwiperSlide className="bg-[var(--wc-secondary)] p-6 text-center flex flex-col items-center justify-center gap-4 pt-[100px]">
                 <h3 className="text-4xl font-bold text-black my-5">امیلیا امیلی</h3>
                 <p className="text-red-600 text-2xl my-3 font-medium">مدیر عامل و موسس کسب و کار</p>
-                <p className="text-black text-xl leading-7  font-bold my-5">"ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :)"</p>
+                <p className="text-black text-xl leading-7  font-bold my-5">ممنون برای شام دیشب. شگفت‌انگیز بود!! من می‌گویم که این بهترین وعده غذایی است که در چند وقت اخیر خورده‌ام. قطعاً در سال آینده شاهد غذا خوردن بیشتری خواهیم بود :)</p>
 
                 {/* ستاره‌ها */}
                 <div className="flex justify-center text-yellow-500 text-3xl">{"★★★★★"}</div>
