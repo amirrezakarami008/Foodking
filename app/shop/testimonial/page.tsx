@@ -85,7 +85,7 @@ export default function Testimonial() {
           </button>
         </section>
 
-        <motion.div ref={motorCycleRef} transition={{ duration: 14 }} style={{ translateX: forMotorCycle as any }} className="transition-all duration-700 -translate-y-5 w-1/4 h-[350px] bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]"></motion.div>
+        <motion.div ref={motorCycleRef} transition={{ duration: 14 }} style={{ translateX: forMotorCycle }} className="transition-all duration-700 -translate-y-5 w-1/4 h-[350px] bg-[url(https://t-theme.com/foodking/wp-content/uploads/2024/08/delivery-man-2.png)]"></motion.div>
 
         <section className="w-1/3 h-full flex justify-center items-center">
           <div className="w-full h-1/2">
